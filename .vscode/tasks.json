@@ -1,0 +1,41 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "windows": {
+        "options": {
+            "shell": {
+                "executable": "cmd.exe",
+                "args": [
+                    "/d",
+                    "/c",
+                    "c:\\DevTools\\env2\\tools\\bin\\env-init.bat && "
+                ]
+            }
+        },
+    },
+    "tasks": [
+        
+        {
+            "label": "下载固件(pyocd)",
+            "type": "shell",
+            "command": "pyocd load -M under-reset -t stm32f407zg ${workspaceFolder}/robot.elf",
+            "args": [],
+            "problemMatcher": []
+        },
+        {
+            "label": "下载qboot(pyocd)",
+            "type": "shell",
+            "command": "pyocd load -M under-reset -t stm32f407zg ${workspaceFolder}/qboot.elf",
+            "args": [],
+            "problemMatcher": []
+        },
+        {
+            "label": "重启(pyocd)",
+            "type": "shell",
+            "command": "pyocd reset -t stm32f407zg",
+            "args": [],
+            "problemMatcher": []
+        },
+    ]
+}
