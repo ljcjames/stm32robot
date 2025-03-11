@@ -1,0 +1,1 @@
+D:\DevTools\diagslave-3.5\win\diagslave.exe -m tcp -a 1 
